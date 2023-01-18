@@ -58,7 +58,7 @@ const onLoadMoreBtnClick = async event => {
 
     const totalPages = Math.ceil(data.totalHits / 40);
 
-    if (totalPages === data.page) {
+    if (totalPages === pixabayAPI.page) {
       loadMoreBtnEl.classList.add('is-hidden');
     }
   } catch (err) {
