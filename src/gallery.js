@@ -13,7 +13,7 @@ const onSearchFormSubmit = async event => {
   event.preventDefault();
 
   searchBtnEl.disabled = true;
-  searchBtnEl.classList.add('disabled');
+  loadMoreBtnEl.classList.add('is-hidden');
 
   pixabayAPI.q = event.target.elements.searchQuery.value.trim();
   pixabayAPI.page = 1;
@@ -41,12 +41,10 @@ const onSearchFormSubmit = async event => {
     console.log(err);
   }
   searchBtnEl.disabled = false;
-  searchBtnEl.classList.remove('disabled');
 };
 
 const onLoadMoreBtnClick = async event => {
   event.target.disabled = true;
-  event.target.classList.add('disabled');
 
   pixabayAPI.page += 1;
 
@@ -67,7 +65,6 @@ const onLoadMoreBtnClick = async event => {
     console.log(err);
   }
   event.target.disabled = false;
-  event.target.classList.remove('disable');
 };
 
 searchFormEl.addEventListener('submit', onSearchFormSubmit);
