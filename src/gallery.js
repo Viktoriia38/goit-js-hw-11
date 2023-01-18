@@ -15,7 +15,7 @@ const onSearchFormSubmit = async event => {
   searchBtnEl.disabled = true;
   searchBtnEl.classList.add('disabled');
 
-  pixabayAPI.q = event.target.elements.searchQuery.value;
+  pixabayAPI.q = event.target.elements.searchQuery.value.trim();
   pixabayAPI.page = 1;
 
   try {
